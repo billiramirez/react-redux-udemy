@@ -2,24 +2,31 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            lat: null
-        };
+    
+    state = {
+        lat: null,
+        errorMessage: ''
+    };
+    
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
-            (position)=> {
-                this.setState({lat: position.coords.latitude});
-            },
-            (err)=> console.log(err)
+            position=> this.setState({lat: position.coords.latitude})
+            ,
+            err=> this.setState({errorMessage: err.message})
         );
     }
+
     render(){
         
-        return (
-            <div>Latitute: {this.state.lat}</div>
-        );
+        if(this.state.errorMessage && !this.state.lat){
+            return <div>Error: {this.state.errorMessage}</div>;
+        }
+
+        if(!this.state.errorMessage && this.state.lat){
+            return <div>Lat: {this.state.lat}</div>;
+        }
+
+        return <div>loading...</div>
 
     }
 }
