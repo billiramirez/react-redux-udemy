@@ -1,13 +1,12 @@
 import jsonplaceholder from '../apis/jsonplaceholder';
 
-
 // When we make use use of redux-thunk, we need to make sure of a function return a function
-export const asyncFetchPost = () => async dispatch => {
+export const asyncFetchPosts = () => async dispatch => {
         const response =  await jsonplaceholder.get('/posts');
-        dispatch(fetchPost(response));
+        dispatch(fetchPosts(response));
 };
 
 
-export const fetchPost = (response)=> {
+export const fetchPosts = (response)=> {
     return {type: 'FETCH_POSTS', payload: response};
 };

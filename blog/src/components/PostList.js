@@ -1,15 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { fetchPost } from '../actions';
+import { asyncFetchPosts } from '../actions';
 
 
 class PostList extends React.Component{
 
     componentDidMount(){
-        this.props.fetchPost();
+        this.props.asyncFetchPosts();
     }
 
     render(){
+        console.log(this.props.posts);
         return (
             <div>
                 PostList
@@ -18,4 +19,10 @@ class PostList extends React.Component{
     }
 };
 
-export default connect(null, {fetchPost})(PostList);
+const mapStateToProps = (state)=> {
+    return {
+        posts: state.posts
+    }
+}
+
+export default connect(mapStateToProps, {asyncFetchPosts})(PostList);
