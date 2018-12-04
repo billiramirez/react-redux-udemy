@@ -1,0 +1,43 @@
+$color1: aliceblue!default;
+$color2: orange!default;
+$color3: blue!default;
+$color4: red!default;
+
+
+
+.season-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &.winter{
+        i{
+            color: $color3;
+        }
+    }
+    &.summer{
+        i{
+            color: $color4;
+        }
+    }
+}
+.winter{
+    background-color: $color1;
+}
+
+.summer{
+    background-color: $color2;
+}
+
+.icon-left{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.icon-right{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
