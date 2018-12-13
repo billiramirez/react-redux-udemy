@@ -49,12 +49,3 @@ export const deleteStream = id => async dispatch => {
     dispatch({type: DELETE_STREAM, payload: id});
 }
 
-// Sintaxis de interpolación
-
-const animalSounds = {cat: 'meow', dog: 'bark'};
-const animal = 'lion';
-const sound = 'roar';
-
-return  {...animalSounds, [animal]: sound};
-
-// {cat: 'meow', dog: 'bark', lion: 'roar'};
