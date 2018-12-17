@@ -12,16 +12,10 @@
       "id": 4
     },
     {
-      "title": "Title new",
-      "description": "New component",
+      "title": "This is a new Stream of Sport",
+      "description": "Sport streams of baseball.",
       "userId": "102714381419258783933",
       "id": 5
-    },
-    {
-      "title": "About to edit",
-      "description": "Refactored!",
-      "userId": "102714381419258783933",
-      "id": 6
     }
   ]
 }
