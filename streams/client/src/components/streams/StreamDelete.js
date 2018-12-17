@@ -1,8 +1,24 @@
 import React from 'react';
+import Modal from  '../Modal';
 
 const StreamDelete = ()=>{
+
+    const actions = (
+        <div>
+            <button className="ui button negative">Delete</button>
+            <button className="ui button">Cancel</button>
+        </div>
+    )
+
     return (
-        <div>Delete</div>
+        <div>
+            StreamDelete
+            <Modal
+                title="Delete Stream"
+                content="are you sure of delete?"
+                actions={actions}
+            />
+        </div>
     );
 };
 
